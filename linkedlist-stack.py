@@ -12,7 +12,7 @@
 - Pop: Removes the top item from the stack and returns it.
 - Peek: Shows the top item from the stack.
 toArray: Convert the stack to the array.
-size: Returns the size of the stack.
+- size: Returns the size of the stack.
 - isEmpty: Returns true if stack is empty, false other wise.
 clear: Clears the stack. """
 
@@ -102,6 +102,29 @@ class Stack:
         else:
             print(f"Peeking - Top item on stack is: {self.head.value}")
 
+
+    # size: Returns the size of the stack.
+    def size(self):
+        
+        # initial value
+        stack_size = 0
+
+        if self.is_empty():
+            print(f"Returning size of stack: {stack_size}")
+            return stack_size
+        else:
+            # walk through the linkedlist
+            current_head = self.head
+            while (current_head != None):
+                # increment the counter each step
+                stack_size += 1
+                current_head = current_head.next
+            # finally return counter value once walked thru the whole list
+            print(f"Returning size of stack: {stack_size}")
+            return stack_size
+
+
+
 ######################
 # (testing)
 ######################
@@ -111,20 +134,23 @@ class Stack:
 New_Stack = Stack()
 
 # add some items
-New_Stack.push(1)
-New_Stack.push(2)
-New_Stack.push(3)
+New_Stack.push("a")
+New_Stack.push("b")
+New_Stack.push("c")
 
-# print current stack
+# print current size and stack
+print(New_Stack.size())
 New_Stack.display()
 
 # pop items one by one
 New_Stack.pop()
+print(New_Stack.size())
 New_Stack.peek()
 New_Stack.display()
 
 
 New_Stack.pop()
+print(New_Stack.size())
 New_Stack.peek()
 New_Stack.display()
 
@@ -134,3 +160,4 @@ New_Stack.display()
 
 # should be empty now
 New_Stack.peek()
+print(New_Stack.size())
