@@ -8,12 +8,6 @@
 
 
 """ List of operations performed on stack
-- Push: Adds the item in the stack at the top.
-- Pop: Removes the top item from the stack and returns it.
-- Peek: Shows the top item from the stack.
-- to_list: Convert the stack to the list.
-- size: Returns the size of the stack.
-- isEmpty: Returns true if stack is empty, false other wise.
 clear: Clears the stack. """
 
 
@@ -145,6 +139,12 @@ class Stack:
         # finally return the array/list
         return stack_as_list #.reverse()
 
+    # clear: Clears the stack
+    def clear(self):
+        print("Clearing the Stack")
+        self.head = None
+        return
+
 
 
 
@@ -184,4 +184,17 @@ New_Stack.display()
 
 # should be empty now
 New_Stack.peek()
+print(New_Stack.size())
+
+# add some new items
+New_Stack.push(100)
+New_Stack.push(200)
+New_Stack.push(300)
+
+New_Stack.display()
+
+# clear the stack
+New_Stack.clear()
+
+# should be 0
 print(New_Stack.size())
