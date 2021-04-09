@@ -1,9 +1,16 @@
 # Listed List Implementation of a Stack Data Structure
+# Referenced the following resources:
+# https://learnersbucket.com/tutorials/data-structures/implement-stack-using-linked-list/
+# https://gist.github.com/dineshrajpurohit/0bb67d29a039f85f2f10
+# https://openbookproject.net/thinkcs/python/english3e/classes_and_objects_I.html
+# https://www.w3schools.com/python/python_classes.asp
+# https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
+
 
 """ List of operations performed on stack
 - Push: Adds the item in the stack at the top.
 - Pop: Removes the top item from the stack and returns it.
-Peek: Shows the top item from the stack.
+- Peek: Shows the top item from the stack.
 toArray: Convert the stack to the array.
 size: Returns the size of the stack.
 - isEmpty: Returns true if stack is empty, false other wise.
@@ -88,6 +95,12 @@ class Stack:
                 current_head = current_head.next
             return
 
+    # Peek: Shows the top item from the stack.
+    def peek(self):
+        if self.is_empty():
+            print("Empty Stack!")
+        else:
+            print(f"Peeking - Top item on stack is: {self.head.value}")
 
 ######################
 # (testing)
@@ -107,13 +120,17 @@ New_Stack.display()
 
 # pop items one by one
 New_Stack.pop()
+New_Stack.peek()
+New_Stack.display()
+
+
+New_Stack.pop()
+New_Stack.peek()
 New_Stack.display()
 
 New_Stack.pop()
-New_Stack.display()
-
-New_Stack.pop()
+New_Stack.peek()
 New_Stack.display()
 
 # should be empty now
-New_Stack.pop()
+New_Stack.peek()
