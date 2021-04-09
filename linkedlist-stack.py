@@ -11,7 +11,7 @@
 - Push: Adds the item in the stack at the top.
 - Pop: Removes the top item from the stack and returns it.
 - Peek: Shows the top item from the stack.
-toArray: Convert the stack to the array.
+- to_list: Convert the stack to the list.
 - size: Returns the size of the stack.
 - isEmpty: Returns true if stack is empty, false other wise.
 clear: Clears the stack. """
@@ -118,10 +118,33 @@ class Stack:
             while (current_head != None):
                 # increment the counter each step
                 stack_size += 1
+                # take a step thru the linked list
                 current_head = current_head.next
             # finally return counter value once walked thru the whole list
             print(f"Returning size of stack: {stack_size}")
             return stack_size
+
+    # to_list: Convert the stack to a python list.
+    def to_list(self):
+
+        # start with empty list
+        stack_as_list = []
+
+        # start at the top of the stack
+        current_head = self.head
+
+        # walk thru each node in the linked list
+        while (current_head != None):
+            # and stick each value into an list in order
+            stack_as_list.append(current_head.value)
+            # step thru the linked list
+            current_head = current_head.next
+        
+        # reverse so that old HEAD = new item[0]
+        stack_as_list.reverse()
+        # finally return the array/list
+        return stack_as_list #.reverse()
+
 
 
 
@@ -141,6 +164,7 @@ New_Stack.push("c")
 # print current size and stack
 print(New_Stack.size())
 New_Stack.display()
+print(f"Create a list from the stack: {New_Stack.to_list()}")
 
 # pop items one by one
 New_Stack.pop()
