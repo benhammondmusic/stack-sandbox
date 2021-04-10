@@ -43,7 +43,7 @@ class Stack:
 
         print(f"pushing {item}") 
         
-        if self.head == None:
+        if self.head == None: # use is_empty()
             # if stack is empty, point head to new node with the item
             self.head = Node(item)
             print("stack was empty, item is new head")
