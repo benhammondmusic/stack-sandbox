@@ -44,7 +44,7 @@ New_Stack.push(100)
 New_Stack.push(200)
 New_Stack.push(300)
 
-New_Stack.display()
+print(New_Stack)
 
 # clear the stack
 New_Stack.clear()
@@ -62,4 +62,5 @@ New_Stack.push("ddd")
 New_Stack.reverse()
 
 
-New_Stack.display()
+print(New_Stack)
+

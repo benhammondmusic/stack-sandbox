@@ -19,6 +19,8 @@ class Node:
         self.next = None
         print(f"New node - value: {value} next: {next}")
 
+    def __str__(self):
+        return self.value
 
 
 # Define the class for the stack
@@ -156,8 +158,37 @@ class Stack:
 
 
     # reverse: reverse the linked list
+    # https://techsloth.io/crushing-tech-interviews-with-the-linked-list-reversal-pattern
     def reverse(self):
         print("Reversing, current stack is:\n", self)
+
+        # start at the top of the stack
+        current = self.head
+
+        # initialize
+        temporary = None
+        previous = None
+
+        # walk through the linked list
+        while (current != None):
+            
+
+            # don't let go of your chain!
+            temporary = current.next
+
+            # swap the link direction
+            current.next = previous
+
+            # attach current to the next nodes "previous"
+            previous = current
+
+            # step to what used to be the "next" node; which is stored in temp
+            current = temporary
+
         
+        # once reached the end/bottom of the stack, it's important to make that bottom item the new head
+        self.head = previous
+
+
 
 
