@@ -52,3 +52,14 @@ New_Stack.clear()
 # should be 0
 print(New_Stack.size())
 
+# add some new items
+New_Stack.push("aaa")
+New_Stack.push("bbb")
+New_Stack.push("ccc")
+New_Stack.push("ddd")
+
+# reverse the linked list
+New_Stack.reverse()
+
+
+New_Stack.display()

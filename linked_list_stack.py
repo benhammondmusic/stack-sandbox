@@ -20,6 +20,7 @@ class Node:
         print(f"New node - value: {value} next: {next}")
 
 
+
 # Define the class for the stack
 class Stack:
     # constructor: Stack starts empty
@@ -27,10 +28,14 @@ class Stack:
         print("creating a stack")
         self.head = None    
 
+    # dunder method to override printing memory address with printing the list content
+    def __str__(self):
+        return self.display()
+
     #
     def is_empty(self):
 
-        print("checking if stack is empty")
+        # print("checking if stack is empty")
 
         if self.head == None:
             return True
@@ -79,15 +84,19 @@ class Stack:
 
         current_head = self.head
 
+        stack_as_string = ""
+
         if self.is_empty():
-            print("Empty Stack!")
+            # print("Empty Stack!")
+            return stack_as_string
         else:
             # iterate each item and print it out 
             while(current_head != None):
-                print(f"{current_head.value}\n")
+                # print(f"{current_head.value}\n")
+                stack_as_string += f"{current_head.value}\n"
                 # move print head forward to next node
                 current_head = current_head.next
-            return
+            return stack_as_string
 
     # Peek: Shows the top item from the stack.
     def peek(self):
@@ -145,5 +154,10 @@ class Stack:
         self.head = None
         return
 
+
+    # reverse: reverse the linked list
+    def reverse(self):
+        print("Reversing, current stack is:\n", self)
+        
 
 
